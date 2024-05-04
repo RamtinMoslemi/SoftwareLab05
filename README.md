@@ -14,7 +14,22 @@
 
 ![IMAGE 2024-05-04 22:55:49](https://github.com/RamtinMoslemi/SoftwareLab05/assets/76493699/0a953a5c-96ed-4e84-8ae2-88baab6e0eb3)
 
-اما اگر بخواهیم که این تابع همچنان به کار خود به صورت قبل ادامه دهد، می‌توان آن را با استفاده از arrayهای معمولی (در مقابل ArrayList) و با pre-allocate مقداری از حافظه برای ذخیره integerهای خواسته شده می‌توان عملکرد کد را به صورت زیر تغییر داد:
+اما اگر بخواهیم که این تابع همچنان به کار خود به صورت قبل ادامه دهد، می‌توان آن را با pre-allocate مقداری از حافظه برای ذخیره integerهای خواسته شده در ArrayList آن را به صورت زیر تغییر داد:
+
+
+```java
+public static void temp() {
+        ArrayList<Integer> a = new ArrayList<Integer>(200000000);
+        for (int i = 0; i < 10000; i++)
+        {
+            for (int j = 0; j < 20000; j++) {
+                a.add(i + j);
+            }
+        }
+    }
+```
+
+که در این صورت عملکرد کد بهبود می‌یابد:
 
 ![IMAGE 2024-05-04 23:03:28](https://github.com/RamtinMoslemi/SoftwareLab05/assets/76493699/59122515-7edb-4494-9610-7ca3400e333a)
 
