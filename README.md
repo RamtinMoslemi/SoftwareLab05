@@ -3,12 +3,15 @@
 
 ## تمرین 
 ۱. با بررسی و تحلیل برنامه JavaCup در می‌یابیم که خط ۲۹ بیشترین مصرف منابع را به همراه دارد:
+
 ![IMAGE 2024-05-04 16:18:46](https://github.com/RamtinMoslemi/SoftwareLab05/assets/76493699/11cabd9f-974f-4aaa-91f1-5c9b9466e3ce)
 
 که این بخش مربوط به تابع temp می‌باشد:
+
 ![IMAGE 2024-05-04 22:54:48](https://github.com/RamtinMoslemi/SoftwareLab05/assets/76493699/61f2e85e-94cf-4cfc-a789-2a8baa5fbfe7)
 
 با توجه به اینکه این تابع کاربردی در برنامه ندارد می‌توان آن را کنار گذاشته تا عملکرد کد بهبود پیدا کند:
+
 ![IMAGE 2024-05-04 22:55:49](https://github.com/RamtinMoslemi/SoftwareLab05/assets/76493699/0a953a5c-96ed-4e84-8ae2-88baab6e0eb3)
 
 
