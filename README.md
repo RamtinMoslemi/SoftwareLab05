@@ -54,9 +54,43 @@ static void incremental(double a)
     }
 ```
 
-عملکرد این کد به صورت زیر می‌باشد:
+عملکرد این کد به صورت زیر می‌باشد(incremental با ورودی 999999):
 
 ![IMAGE 2024-05-04 23:33:52](https://github.com/RamtinMoslemi/SoftwareLab05/assets/76493699/03d002b5-2d14-45a4-8fc3-46e23b262ba6)
 
- حال برای بهبود این تابع الگوریتم بهتری را انتخاب می‌کنیم:
- 
+ حال برای بهبود این تابع الگوریتم بهتری (الگوریتم bisection) را انتخاب می‌کنیم:
+
+```java
+ static void bisection(double a, double b)
+    {
+        if (func(a) * func(b) >= 0)
+        {
+            System.out.println("You have not assumed"
+                    + " right a and b");
+            return;
+        }
+
+        double c = a;
+        while (Math.abs(b-a) >= EPSILON)
+        {
+            // Find middle point
+            c = (a+b)/2;
+
+            // Check if middle point is root
+            if (func(c) == 0.0)
+                break;
+
+                // Decide the side to repeat the steps
+            else if (func(c)*func(a) < 0)
+                b = c;
+            else
+                a = c;
+        }
+        //prints value of c upto 4 decimal places
+        System.out.printf("The value of root is : %.4f",c);
+    }
+```
+
+و عملکرد آن به صورت زیر خواهد شد(روش بایسکشن با ورودی 999999 و -999999):
+![IMAGE 2024-05-04 23:57:39](https://github.com/RamtinMoslemi/SoftwareLab05/assets/76493699/43258803-4ab0-4f59-a878-2a87d505f7b8)
+:
