@@ -12,6 +12,37 @@ class GFG{
     }
 
     // Prints root of func(x) with error of EPSILON
+    static void bisection(double a, double b)
+    {
+        if (func(a) * func(b) >= 0)
+        {
+            System.out.println("You have not assumed"
+                    + " right a and b");
+            return;
+        }
+
+        double c = a;
+        while (Math.abs(b-a) >= EPSILON)
+        {
+            // Find middle point
+            c = (a+b)/2;
+
+            // Check if middle point is root
+            if (func(c) == 0.0)
+                break;
+
+                // Decide the side to repeat the steps
+            else if (func(c)*func(a) < 0)
+                b = c;
+            else
+                a = c;
+        }
+        //prints value of c upto 4 decimal places
+        System.out.printf("The value of root is : %.4f"
+                ,c);
+    }
+
+    // Prints root of func(x) with error of EPSILON
     static void incremental(double a)
     {
         while (Math.abs(func(a)) >= EPSILON)
@@ -31,6 +62,9 @@ class GFG{
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input the first guess: ");
         double a = scanner.nextDouble();
-        incremental(a);
+        System.out.println("Input the second guess: ");
+        double b = scanner.nextDouble();
+        //incremental(a);
+        bisection(a, b);
     }
 }
